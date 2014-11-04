@@ -303,7 +303,7 @@ module GoogleDrive
 
             # Updates cell values using batch operation.
             # If the data is large, we split it into multiple operations, otherwise batch may fail.
-            @modified.each_slice(25) do |chunk|
+            @modified.each_slice(500) do |chunk|
 
               xml = <<-EOS
                 <feed xmlns="http://www.w3.org/2005/Atom"
